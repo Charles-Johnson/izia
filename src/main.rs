@@ -1,5 +1,5 @@
 /*
-    IZia: an interactive command line program for Zia programming.
+    IZia: an interactive command line interface for Zia programming.
     Copyright (C) 2018 Charles Johnson
 
     This program is free software: you can redistribute it and/or modify
