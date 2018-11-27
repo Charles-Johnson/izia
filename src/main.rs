@@ -18,17 +18,16 @@
 extern crate zia;
 extern crate linefeed;
 
-use zia::{memory_database, oracle};
+use zia::Context;
 use linefeed::{Interface, ReadResult};
 
 fn main() {
     let reader = Interface::new("IZia").unwrap();
-    println!("IZia Copyright (C) 2018 Charles Johnson.
-    This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions; visit https://www.gnu.org/licenses/gpl-3.0.en.html for more details.");
+    println!("IZia Copyright (C) 2018 Charles Johnson.\nThis program comes with ABSOLUTELY NO WARRANTY.\nThis is free software, and you are welcome to redistribute it under certain\nconditions; visit https://www.gnu.org/licenses/gpl-3.0.en.html for more details.");
     reader.set_prompt(">>> ").unwrap();
-    let db = memory_database().unwrap();
+    let mut cont = Context::new().unwrap();
     while let ReadResult::Input(input) = reader.read_line().unwrap() {
-        println!("{}", match oracle(&input, &db) {Ok(s) => s, Err(e) => e.to_string(),});
+        println!("{}", match cont.execute(&input) {Ok(s) => s, Err(e) => e.to_string(),});
     }
     println!("Exiting");
 }
