@@ -5,4 +5,4 @@ authors = ["Charles Johnson <charlesthomasjohnson0@gmail.com>"]
 
 [dependencies]
 zia = { git = "https://github.com/Charles-Johnson/zia"}
-linefeed = "0.5"
+linefeed = "0.5.3"
