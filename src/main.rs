@@ -18,7 +18,7 @@
 extern crate zia;
 extern crate linefeed;
 
-use zia::Context;
+use zia::{Context, Execute};
 use linefeed::{Interface, ReadResult};
 
 fn main() {
