@@ -18,7 +18,7 @@
 extern crate zia;
 extern crate linefeed;
 
-use zia::{Context, Execute, AbstractSyntaxTree};
+use zia::{Context, Execute, AbstractSyntaxTree, ContextMaker};
 use linefeed::{Interface, ReadResult};
 
 fn main() {
