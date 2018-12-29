@@ -18,7 +18,7 @@
 extern crate zia;
 extern crate linefeed;
 
-use zia::{Context, Execute, AbstractSyntaxTree, ContextMaker};
+use zia::{Context, Execute, ContextMaker};
 use linefeed::{Interface, ReadResult};
 
 fn main() {
@@ -27,7 +27,7 @@ fn main() {
     reader.set_prompt(">>> ").unwrap();
     let mut cont = Context::new();
     while let ReadResult::Input(input) = reader.read_line().unwrap() {
-        println!("{}", cont.execute::<AbstractSyntaxTree>(&input));
+        println!("{}", cont.execute(&input));
     }
     println!("Exiting");
 }
